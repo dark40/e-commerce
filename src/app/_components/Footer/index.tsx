@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 import { Footer } from '../../../payload/payload-types'
 import { fetchFooter } from '../../_api/fetchGlobals'
@@ -14,7 +13,11 @@ export async function Footer() {
     console.error(error)
   }
 
-  const navItems = footer?.navItems || []
+  // const navItems = footer?.navItems || []
 
-  return <FooterComponent footer={footer} />
+  return (
+    <>
+      <FooterComponent footer={footer} />
+    </>
+  )
 }
