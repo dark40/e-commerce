@@ -37,7 +37,7 @@ export const ArchiveBlock: React.FC<
         populatedDocsTotal={populatedDocsTotal}
         categories={categories}
         limit={limit}
-        sort="-publishedOn" //used in useFilter()
+        //   sort="-publishedOn" //used in useFilter()
       />
     </div>
   )
