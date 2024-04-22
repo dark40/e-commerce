@@ -33,7 +33,7 @@ const Promotion = () => {
     }, 1000) // Update every second
 
     return () => clearInterval(intervalId) // Clean up the interval on unmount
-  }, [])
+  }, [targetDate])
 
   return (
     <section className={classes.promotion}>
