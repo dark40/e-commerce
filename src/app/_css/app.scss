@@ -91,10 +91,12 @@ h4 {
 
 h5 {
   @extend %h5;
+  margin: 0;
 }
 
 h6 {
   @extend %h6;
+  margin: 0;
 }
 
 p {
