@@ -14,7 +14,6 @@ import classes from './index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname()
-
   const navItems = footer?.navItems || []
 
   return (
@@ -32,26 +31,20 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
               />
 
               <h5 className={classes.title}>{inclusion.title}</h5>
-              <p className={classes.description}>{inclusion.description}</p>
+              <p>{inclusion.description}</p>
             </li>
           ))}
         </ul>
       </Gutter>
-      {/* To add a copyright to the the footer.  
-      1. pass the footer prop to the FooterComponent 
-      2. add copyright to the payload-types.ts  
-      3. add the globals.ts 
-      4. add the field in
-      Footer.ts 
-      5. yarn payload generate:graphQLSchema 
-      6. yarn payload generate:types  */}
+
       <div className={classes.footer}>
         <Gutter>
           <div className={classes.wrap}>
             <Link href="/">
-              <Image src={'/logo-white.svg'} alt="Logo" width={170} height={50} />
+              <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
             </Link>
-            <p>{footer.copyright}</p>
+
+            <p>{footer?.copyright}</p>
 
             <div className={classes.socialLinks}>
               {navItems.map(item => {

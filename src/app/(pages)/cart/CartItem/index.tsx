@@ -13,9 +13,26 @@ import classes from './index.module.scss'
 const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
   const [quantity, setQuantity] = useState(qty)
 
-  const decrement = () => {}
-  const increment = () => {}
-  const enterQty = () => {}
+  const decrement = () => {
+    const updatedQty = quantity > 1 ? quantity - 1 : 1
+
+    setQuantity(updatedQty)
+    addItemToCart({ product, quantity: Number(updatedQty) })
+  }
+
+  const increment = () => {
+    const updatedQty = quantity + 1
+
+    setQuantity(updatedQty)
+    addItemToCart({ product, quantity: Number(updatedQty) })
+  }
+
+  const enterQty = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const updatedQty = Number(e.target.value)
+
+    setQuantity(updatedQty)
+    addItemToCart({ product, quantity: Number(updatedQty) })
+  }
 
   return (
     <li className={classes.item} key={title}>

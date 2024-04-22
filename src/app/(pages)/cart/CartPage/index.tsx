@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 import { Page, Settings } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
-import { HR } from '../../../_components/HR'
 import { LoadingShimmer } from '../../../_components/LoadingShimmer'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
@@ -58,6 +57,8 @@ export const CartPage: React.FC<{
                 <div className={classes.header}>
                   <p>Products</p>
                   <div className={classes.headerItemDetails}>
+                    <p></p>
+                    <p></p>
                     <p>Quantity</p>
                   </div>
                   <p className={classes.headerSubtotal}>Subtotal</p>
@@ -95,6 +96,16 @@ export const CartPage: React.FC<{
               <div className={classes.summary}>
                 <div className={classes.row}>
                   <h6 className={classes.cartTotal}>Summary</h6>
+                </div>
+
+                <div className={classes.row}>
+                  <p className={classes.cartTotal}>Delivery Charge</p>
+                  <p className={classes.cartTotal}>$0</p>
+                </div>
+
+                <div className={classes.row}>
+                  <p className={classes.cartTotal}>Grant Total</p>
+                  <p className={classes.cartTotal}>{cartTotal.formatted}</p>
                 </div>
 
                 <Button
